@@ -1,23 +1,25 @@
 package atm;
 
 public class Account {
-	private String id, account;
+	
+	public static int LIMIT = 3;
+	
+	private String userId;
+	private String accNum;
 	private int money;
 
-	public Account(String id, String account, int money) {
-		this.id = id;
-		this.account = account;
+	public Account(String userId, String accNum, int money) {
+		this.userId = userId;
+		this.accNum = accNum;
 		this.money = money;
 	}
 
-	public String getId() {
-		return this.id;
+	public String getUserId() {
+		return this.userId;
 	}
-
-	public String getAccount() {
-		return this.account;
+	public String getAccNum() {
+		return this.accNum;
 	}
-
 	public int getMoney() {
 		return this.money;
 	}

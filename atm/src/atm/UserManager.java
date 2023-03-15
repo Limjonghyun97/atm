@@ -9,36 +9,33 @@ public class UserManager {
 	public ArrayList<User> getList() {
 		return this.list;
 	}
-	// User에 대한
 
 	// Create
-	public static void addArr(String id, String password, String name) {
-		boolean isRun = true;
-		for (int i = 0; i < list.size(); i++) {
-			if (list.get(i).getUser().equals(id)) {
-				isRun = false;
-			}
-		}
-		if (isRun) {
-			User data = new User(id, password, name);
-			list.add(data);
-			System.out.println("가입 성공");
-		} else {
-			System.out.println("중복되는 아이디가 있습니다.");
-		}
+	public void addUser(User user) {
+		this.list.add(user);
 	}
 
 	// Read
-	public static void readArr() {
-		
+	public User getUser(int index) {
+		User user = this.list.get(index);
+		String id = user.getId();
+		String pw = user.getPassword();
+		String name = user.getName();
+		User reqObj = new User(id, pw, name);
+		return reqObj;
 	}
 
 	// Update
-	public static void updateArr() {
-
+	public void setUser(int index, User user) {
+		this.list.set(index, user);
 	}
-	// Delete
-	public static void deleteArr() {
 
+	// Delete
+	public void deleteUser(int index) {
+		this.list.remove(index);
+	}
+
+	public void deleteUserById(String id) {
+		this.list.remove(id);
 	}
 }
